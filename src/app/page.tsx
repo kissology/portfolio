@@ -21,10 +21,11 @@ import {
   SiRedis,
   SiDocker,
   SiJest,
+  SiLinkedin,
+  SiGmail,
 
 } from "react-icons/si";
-import Image from "next/image";
-import { useImperativeHandle } from "react";
+import Image from "next/image";;
 import useInView from "./hooks/useInView";
 
 
@@ -37,18 +38,94 @@ export default function Home() {
 
   return (
     <>
+
       <VantaBackground />
-      <div className="relative z-10 min-h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth text-white">
-        {/* Header */}
-        <section className="relative snap-start min-h-screen flex flex-col items-center justify-center text-center px-4">
-          <h1 className="text-9xl font-normal">Caitlin Ma</h1>
-          <p className="text-2xl mt-2">Software Engineer | 
-            Builder | Collabortator
-         </p>
+  
+      {/* Social links */}
+      <div className="pl-4 pt-4 z-50 flex gap-4 hidden sm:flex">
+        <a href="https://github.com/kissology" target="_blank" rel="noopener noreferrer">
+          <button className="Btn">
+          <span className="BG github-bg"></span>
+            <span className="svgContainer">
+              <SiGithub className="text-white w-5 h-5" />
+            </span>
+          </button>
+        </a>
+  
+        {/* LinkedIn */}
+        <a href="https://linkedin.com/in/kissology" target="_blank" rel="noopener noreferrer">
+          <button className="Btn">
+          <span className="BG linkedin-bg"></span>
+            <span className="svgContainer">
+            <SiLinkedin className="text-white w-5 h-5" />
+            </span>
+          </button>
+        </a>
+  
+        {/* Email */}
+        <a href="kissology90@gmail.com">
+          <button className="Btn">
+          <span className="BG gmail-bg"></span>
+            <span className="svgContainer">
+            <SiGmail className="text-white w-5 h-5" />
+            </span>
+          </button>
+        </a>
+      </div>
+      
+  
+      <section id="header" className="relative snap-start min-h-screen flex items-center justify-center text-center px-4">
+  <div className="flex flex-col items-center">
+    <h1 style={{ fontFamily: 'Valiny' }} className="text-9xl font-normal">Caitlin Ma</h1>
+    <p className="text-2xl mt-2">Software Engineer | Builder | Collaborator</p>
+    <button
+  className="button !mt-20 rotate-180"
+  onClick={(e) => {
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth" });
+    }
+
+    const btn = e.currentTarget as HTMLElement;
+    btn.blur();
+    btn.classList.add("no-hover");
+    setTimeout(() => {
+      btn.classList.remove("no-hover");
+    }, 300); 
+  }}
+  aria-label="Scroll down"
+>
+  <span className="button-box">
+
+    <svg className="button-elem initial-arrow" viewBox="0 0 20 20">
+      <polyline
+        points="5 8 10 13 15 8"
+        stroke="currentColor"
+        strokeWidth="2"
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+
+
+    <svg className="button-elem hover-arrow" viewBox="0 0 20 20">
+      <polyline
+        points="5 8 10 13 15 8"
+        stroke="currentColor"
+        strokeWidth="2"
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  </span>
+</button>
+</div>
         </section>
 
        {/* About Me */}
-       <section className="snap-start min-h-screen flex items-center justify-center px-4 text-center">
+       <section id="about" className="snap-start min-h-screen flex items-center justify-center px-4 text-center">
   <div className="max-w-4xl flex flex-col items-center space-y-8">
     <Image
       src="/headshot.jpeg"
@@ -80,41 +157,83 @@ export default function Home() {
   <div className="relative z-10 border-white/20">
   <div className="w-full max-w-5xl space-y-12 text-left">
   
-  <h2 
-  
+  <h2
   ref={experienceRef}
   className={`text-center text-5xl mb-15 underline-on-scroll ${
     experienceVisible ? "animate" : ""
   }`}
->{`Professional Experience `}</h2>
+>
+  {`Professional Experience`}
+</h2>
 
-  <div className="w-full max-w-5xl space-y-12 text-left">
-    <div>
-      <h3 className="text-2xl font-semibold">Software Engineer — Patra Corporation</h3>
-      <p className="mt-2 text-sm italic text-white/70 font-bold">Mar. 2023 – Present</p>
-      <ul className="list-disc list-inside mt-3 space-y-2 text-base">
-        <li>Founding developer of Patra’s first SaaS product team, building both frontend and backend systems for a policy comparison platform.</li>
-        <li>Developed React-based frontend with Next.js and a scalable NestJS backend.</li>
-        <li>Led development of Agency Management system, including multi-step onboarding flows, role-based access, and permission control via NestJS and database migrations.</li>
-        <li>Designed reusable components and scalable APIs to support deeply nested form structures.</li>
-        <li>Feature expansion enabled support for complex lines of business, driving client adoption and profitability.</li>
-        <li>Championed engineering best practices including code reviews, testing, and maintainability.</li>
-      </ul>
-    </div>
+<div className="w-full max-w-5xl space-y-12 text-left">
+  <div>
+    <h3 className="text-2xl font-semibold">Software Engineer - Patra Co.</h3>
+    <p className="mt-2 text-sm italic text-white/70 font-bold">Mar. 2023 – Present</p>
+    <ul className="list-disc list-inside mt-3 space-y-2 text-base text-lg">
+      <li>
+        Founding developer on Patra’s first SaaS product, building both the frontend and backend systems for a sophisticated policy comparison application in the insurance and financial services sector. Developed a React-based frontend with Next.js and a scalable NestJS backend, enabling seamless data flow and system reliability. Accelerated future feature delivery by designing reusable, modular components and scalable API architecture.
+      </li>
+      <li>
+  Led the development of an Agency Management system feature. Responsibilities included:
+  <ul className="list-disc list-inside ml-8 space-y-2">
+    <li>
+      Designing and implementing a robust database schema and NestJS API endpoints to support dynamic roles and permissions across multiple user types.
+    </li>
+    <li>
+      Writing database migrations to establish and manage permission structures.
+    </li>
+    <li>
+      Building a multi-step UI flow to handle the order of operations for agency creation, user assignment, impersonation, and role-based access control.
+    </li>
+    <li>
+      Optimizing endpoint interactions through a centralized UI hook to ensure consistency and efficiency across the onboarding flow.
+    </li>
+    <li>
+      This feature enabled scalable client onboarding and contributed to increased sales opportunities through streamlined access management.
+    </li>
+  </ul>
+</li>
+<li>
+  Drove the end-to-end development of a major service expansion in collaboration with cross-functional teams, ensuring business alignment through close stakeholder engagement.
+  <ul className="list-disc list-inside ml-8 space-y-2">
+    <li>
+      Designed and implemented complex parent-child relationships that were previously unsupported in the application, updating the API, database, and UI to support deeply nested structures. This included building reusable components, adding field-level validation, and managing submission state across nested inputs.
+    </li>
+    <li>
+      This expansion significantly increased business value by enabling the application to scale and support more complex lines of business requirements, making it a more compelling solution for clients with advanced workflows. It contributed to client base growth, increased adoption, and profitability, and was recognized by stakeholders as a high-impact release aligned with strategic goals.
+    </li>
+  </ul>
+</li>
 
-    <div>
-      <h3 className="text-2xl font-semibold">Web Developer — Freelance</h3>
-      <p className="mt-2 text-sm italic text-white/70 font-bold">Feb. 2022 – Mar. 2023</p>
-      <ul className="list-disc list-inside mt-3 space-y-2 text-base">
-        <li>Improved SEO and site performance with lazy loading, async scripts, and optimized images (WebP), reducing load time by 30–50%.</li>
-        <li>Integrated AWS Cognito for authentication flows including MFA and JWT session management.</li>
-        <li>Built accessible, responsive UIs using semantic HTML and Tailwind/Bootstrap.</li>
-      </ul>
-    </div>
+      <li>
+        Championed and enforced engineering best practices across the team—driving high code quality, robust test coverage, and long-term maintainability through strategic architectural decisions, rigorous peer reviews, and comprehensive integration testing.
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h3 className="text-2xl font-semibold">Web Developer - Freelance</h3>
+    <p className="mt-2 text-sm italic text-white/70 font-bold">Feb. 2021 – Mar. 2023</p>
+    <ul className="list-disc list-inside mt-3 space-y-2 text-base text-lg
+    ">
+      <li>
+        Improved SEO performance and load times by auditing client sites and implementing lazy loading, async script strategies, and optimized image formats (WebP), leading to 30–50% faster first paint times.
+      </li>
+      <li>
+        Integrated AWS Cognito into client dashboards and apps, handling full user auth flows (sign-up, MFA, token refresh) and building secure role-based access components with JWT-based session management.
+      </li>
+      <li>
+        Built fully responsive and accessible websites using semantic HTML, modern CSS frameworks (Tailwind, Bootstrap), and media queries to ensure consistent cross-browser compatibility across devices.
+      </li>
+    </ul>
+  </div>
+</div>
+
 
     <div className="pt-16 border-t border-white/20">
       <h2 className="text-3xl font-bold mb-12">Education</h2>
-      <div className="flex flex-row flex-wrap gap-60">    
+      <div className="flex flex-row justify-between flex-wrap gap-12">   
         <div className="flex items-center gap-6">
           <img src="/flatironlogo.png" alt="Flatiron School logo" className="w-16 h-16 object-contain" />
           <div>
@@ -135,19 +254,19 @@ export default function Home() {
       </div>
     </div>
   </div>
-  </div>
 </section>
 
+
     {/* Stack Section */}
-<section className="snap-start min-h-screen flex items-center justify-center px-4 text-center">
+<section className="snap-start min-h-screen flex items-center justify-center px-4 text-left">
 <div className="w-full px-6">
 <div className="max-w-screen-xl mx-auto flex flex-col items-center">
     <h3  ref={stackRef}
-  className={`text-center text-5xl mb-15 underline-on-scroll ${
+  className={`text-left text-5xl mb-15 underline-on-scroll ${
     stackVisible ? "animate" : ""
   }`}
 >{` Skills && Frameworks `}</h3>
-  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 text-white w-full">
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 w-full">
     <TechItem name="TypeScript" icon={<SiTypescript className="text-5xl" />} />
     <TechItem name="React" icon={<SiReact className="text-5xl" />} />
     <TechItem name="Next.js" icon={<SiNextdotjs className="text-5xl" />} />
@@ -196,19 +315,48 @@ export default function Home() {
             </div>
           </div>
         </section>
+<div className = "flex items-center justify-center text-center">
+        <button
+  className="button !mb-20 rotate-360"
+  onClick={(e) => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    const btn = e.currentTarget as HTMLElement;
+    btn.blur();
+    btn.classList.add("no-hover");
+    setTimeout(() => {
+      btn.classList.remove("no-hover");
+    }, 300);
+  }}
+  aria-label="Scroll down"
+>
+  <span className="button-box">
 
-        {/* Contact */}
-        <section className="snap-start min-h-screen flex flex-col items-center justify-center text-center space-y-4 px-4">
-          <h2 className="text-2xl font-semibold">Contact</h2>
-          <p>{`const reachOut = () => console.log("I would love to connect!");`}</p>
-          <div className="flex justify-center gap-6 text-blue-300">
-            <a href="https://github.com/kissology" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://linkedin.com/in/kissology" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="mailto:kissology90@gmail.com">Email</a>
-          </div>
-        </section>
-      </div>
-      
+    <svg className="button-elem initial-arrow" viewBox="0 0 20 20">
+      <polyline
+        points="5 8 10 13 15 8"
+        stroke="currentColor"
+        strokeWidth="2"
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+
+
+    <svg className="button-elem hover-arrow" viewBox="0 0 20 20">
+      <polyline
+        points="5 8 10 13 15 8"
+        stroke="currentColor"
+        strokeWidth="2"
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  </span>
+</button>
+</div>
     </>
+    
   );
 }
