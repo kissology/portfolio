@@ -21,12 +21,11 @@ import {
   SiRedis,
   SiDocker,
   SiJest,
-  SiLinkedin,
-  SiGmail,
 
 } from "react-icons/si";
 import Image from "next/image";;
 import useInView from "./hooks/useInView";
+import Navbar from "./Navbar"; // must match exact casing
 
 
 export default function Home() {
@@ -37,43 +36,9 @@ export default function Home() {
   const [projectsRef, projectsVisible] = useInView();
 
   return (
-    <>
-
+    <>  
+      <Navbar/>
       <VantaBackground />
-  
-      {/* Social links */}
-      <div className="pl-4 pt-4 z-50 flex gap-4 hidden sm:flex">
-        <a href="https://github.com/kissology" target="_blank" rel="noopener noreferrer">
-          <button className="Btn">
-          <span className="BG github-bg"></span>
-            <span className="svgContainer">
-              <SiGithub className="text-white w-5 h-5" />
-            </span>
-          </button>
-        </a>
-  
-        {/* LinkedIn */}
-        <a href="https://linkedin.com/in/kissology" target="_blank" rel="noopener noreferrer">
-          <button className="Btn">
-          <span className="BG linkedin-bg"></span>
-            <span className="svgContainer">
-            <SiLinkedin className="text-white w-5 h-5" />
-            </span>
-          </button>
-        </a>
-  
-        {/* Email */}
-        <a href="kissology90@gmail.com">
-          <button className="Btn">
-          <span className="BG gmail-bg"></span>
-            <span className="svgContainer">
-            <SiGmail className="text-white w-5 h-5" />
-            </span>
-          </button>
-        </a>
-      </div>
-      
-  
       <section id="header" className="relative snap-start min-h-screen flex items-center justify-center text-center px-4">
   <div className="flex flex-col items-center">
     <h1 style={{ fontFamily: 'Valiny' }} className="text-9xl font-normal">Caitlin Ma</h1>
@@ -152,7 +117,7 @@ export default function Home() {
 
 
 {/* Professional Experience + Education */}
-<section className="relative snap-start min-h-screen px-6 py-20 flex flex-col items-center text-white">
+<section id="experience" className="relative snap-start min-h-screen px-6 py-20 flex flex-col items-center text-white">
   {/* Content */}
   <div className="relative z-10 border-white/20">
   <div className="w-full max-w-5xl space-y-12 text-left">
@@ -258,7 +223,7 @@ export default function Home() {
 
 
     {/* Stack Section */}
-<section className="snap-start min-h-screen flex items-center justify-center px-4 text-left">
+<section id="stack" className="snap-start min-h-screen flex items-center justify-center px-4 text-left">
 <div className="w-full px-6">
 <div className="max-w-screen-xl mx-auto flex flex-col items-center">
     <h3  ref={stackRef}
@@ -291,7 +256,7 @@ export default function Home() {
 </section>
 
         {/* Projects */}
-        <section className="relative snap-start min-h-screen flex items-center justify-center px-4 text-center">
+        <section id="projects" className="relative snap-start min-h-screen flex items-center justify-center px-4 text-center">
 
           <div className="max-w-4xl space-y-6">
             <h2 ref={projectsRef}
