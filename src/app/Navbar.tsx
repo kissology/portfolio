@@ -14,7 +14,7 @@ export default function Navbar() {
   return (
     <>
       {/* Social links (Desktop only) */}
-      <div className="pl-4 pt-4 z-50 flex gap-4 hidden sm:flex">
+      <div className="pl-4 pt-4 z-50 flex gap-4 hidden sm:flex bg-transparent">
         <a href="https://github.com/kissology" target="_blank" rel="noopener noreferrer">
           <button className="Btn">
             <span className="BG github-bg"></span>
@@ -31,18 +31,20 @@ export default function Navbar() {
             </span>
           </button>
         </a>
-        <a href="mailto:kissology90@gmail.com">
-          <button className="Btn">
-            <span className="BG gmail-bg"></span>
-            <span className="svgContainer">
-              <SiGmail className="text-white w-5 h-5" />
-            </span>
-          </button>
-        </a>
+        <a
+  href="mailto:kissology90@gmail.com"
+  className="Btn inline-flex items-center justify-center"
+>
+  <span className="BG gmail-bg"></span>
+  <span className="svgContainer">
+    <SiGmail className="text-white w-5 h-5" />
+  </span>
+</a>
+
       </div>
 
       {/* Burger Menu */}
-      <div className="absolute top-4 right-4 z-50">
+      <div className="absolute top-4 right-4 z-50 bg-transparent">
         <button
           className="flex flex-col gap-1 w-11 h-11 justify-center items-center bg-white/90 rounded-lg shadow-md"
           onClick={() => setIsOpen(!isOpen)}
@@ -69,11 +71,15 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="absolute top-16 right-0 z-40 bg-black bg-opacity-80 p-4 rounded-lg flex flex-col gap-4 text-white text-lg">
-            <button onClick={() => handleScroll("about")}>About</button>
-            <button onClick={() => handleScroll("experience")}>Experience</button>
-            <button onClick={() => handleScroll("stack")}>Skills</button>
-            <button onClick={() => handleScroll("projects")}>Projects</button>
+          <div  className={`absolute top-0 right-16 z-40 bg-black bg-opacity-70 p-8 w-64 flex flex-col gap-6 text-white text-lg transition-opacity duration-300 ${
+            isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
+        >
+            <button className="hover:underline block" onClick={() => handleScroll("about")}>About</button>
+            <button className="hover:underline block" onClick={() => handleScroll("experience")}>Experience</button>
+            <button className="hover:underline block" onClick={() => handleScroll("stack")}>Skills</button>
+            <button className="hover:underline block" onClick={() => handleScroll("projects")}>Projects</button>
+            <a href="/Caitlin_Ma_Resume.pdf"target="_blank"rel="noopener noreferrer"className="hover:underline block text-center" onClick={() => setIsOpen(false)}> Resume</a>
           </div>
         )}
       </div>

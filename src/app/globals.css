@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --foreground: #171717;
+  --foreground: #1b0a2a;
 }
+
 
 @theme inline {
   --color-background: var(--background);
@@ -13,7 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #1b0a2a;
     --foreground: #ededed;
   }
 }
@@ -27,6 +28,13 @@
 
 @font-face {
   font-family: 'Valiny';
+  src: url('/fonts/NotoSans-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NotoSans';
   src: url('/fonts/ValinyPersonalUseOnlyReg-vnJ74.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
@@ -35,7 +43,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Inter;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 @keyframes underlineGrow {
@@ -69,9 +77,10 @@ body {
   transform: scaleX(1);
 }
 
+/* Socials */
 .Btn {
-  width: 64px;
-  height: 64px;
+  width: 52px;
+  height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -134,6 +143,7 @@ body {
   backdrop-filter: blur(4px);
 }
 
+/* Down button */
 .button {
   display: block;
   position: relative;
@@ -242,6 +252,7 @@ body {
   display: none;
 }
 
+/* Burger menu */
 .toggle {
   position: relative;
   width: 64px; /* Fixed typo: '64x' → '64px' */
