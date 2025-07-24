@@ -28,8 +28,8 @@ export default function Home() {
           className="relative snap-start min-h-screen flex items-center justify-center text-center px-4"
         >
           <div className="flex flex-col items-center">
-            <h1 className="text-8xl font-normal text-gray-200" style={{ fontFamily: 'Poppins-Medium' }}>Caitlin Ma</h1>
-            <p className="text-2xl mt-2 text-gray-300">
+            <h1 className="text-8xl font-normal text-gray-100" style={{ fontFamily: 'Poppins-Medium' }}>Caitlin Ma</h1>
+            <p className="text-1xl mt-2 text-gray-300">
               Software Engineer | Builder | Collaborator
             </p>
             <DownScrollButton targetId="about" />
