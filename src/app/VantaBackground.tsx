@@ -43,6 +43,15 @@ export default function VantaBackground() {
       };
     }, [vantaEffect]);
   
-    return <div ref={vantaRef} className="fixed inset-0 -z-10" />;
-
+    return (
+      <div
+        ref={vantaRef}
+        className="absolute top-0 left-0 w-full h-[200vh] -z-10"
+        style={{
+          maskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)',
+        }}
+      />
+    );
   }
+  
