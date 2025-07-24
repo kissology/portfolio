@@ -40,6 +40,27 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'NotoSans';
+  src: url('/fonts/ValinyPersonalUseOnlyReg-vnJ74.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family:'Poppins';
+  src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family:'Poppins-Medium';
+  src: url('/fonts/Poppins-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
