@@ -26,7 +26,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
           Got a question or proposal, or just want to say hello? Go ahead.
         </p>
         <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4">
             <div className="flex flex-col">
           <label className="text-gray-400 text-sm mb-1">Your name</label>
             <input
@@ -49,13 +49,13 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
           <label className="text-gray-400 text-sm mb-1">Your message</label>
           <textarea
             placeholder="Say hello!"
-            className="border-b w-full text-purple-600 pl-2 focus:outline-none focus:border-purple-600 placeholder-purple-400 text-sm focus:placeholder-transparent"
+            className="border-b w-full text-purple-600 pt-1 pb-2 px-2 focus:outline-none focus:border-purple-600 placeholder-purple-400 text-sm focus:placeholder-transparent"
             required
           />
           <div className="text-center mt-6">
             <button
               type="submit"
-              className="border border-purple-600 text-purple-600 px-6 pt-2 rounded hover:bg-purple-50 transition-all focus:placeholder-transparent"
+              className="border border-purple-600 text-purple-600 px-6 py-2 rounded hover:bg-purple-50 transition-all focus:placeholder-transparent"
             >
               SHOOT →
             </button>

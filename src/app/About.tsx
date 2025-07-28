@@ -21,16 +21,18 @@ export default function About({ aboutRef, aboutVisible }: AboutProps) {
 
         <h2
           ref={aboutRef}
-          className={`text-center text-5xl mb-15 underline-on-scroll ${
+          className={`text-center text-5xl mb-8 underline-on-scroll ${
             aboutVisible ? "animate" : ""
           }`}
         >
           {` About Me`}
         </h2>
 
-        <p className="text-lg leading-relaxed whitespace-pre-wrap px-4">
-          Hi, I'm Caitlin! I'm a Full-Stack Software Engineer with experience building scalable web applications across both front-end and back-end systems. I specialize in modern JavaScript frameworks and crafting intuitive user experiences, while also designing robust APIs and driving feature development from concept to deployment. I thrive in cross-functional teams, translating complex business needs into impactful technical solutions. I’m passionate about building products that solve real-world problems.
-        </p>
+        <p className="text-lg leading-relaxed px-4 max-w-2xl mx-auto text-center">
+  I like to build scalable web applications and robust APIs, specializing in
+  modern JavaScript frameworks, and end-to-end feature development, delivering
+  impactful solutions that solve real-world problems.
+</p>
       </div>
     </section>
   );
