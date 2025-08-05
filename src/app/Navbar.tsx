@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect} from "react";
+import { useTransition, animated } from "@react-spring/web";
 import { SiGithub, SiLinkedin, SiGmail } from "react-icons/si";
 import ContactModal from "./modals/ContactModal";
 
@@ -28,6 +29,19 @@ export default function Navbar() {
     }
   };
 
+  const menuTransition = useTransition(isOpen, {
+    from: { opacity: 0, transform: "translateX(-12px) scale(0.98)" },
+    enter: { opacity: 1, transform: "translateX(0px) scale(1)" },
+    leave: { opacity: 0, transform: "translateX(-12px) scale(0.98)" },
+    config: { tension: 240, friction: 22 },
+  });
+
+  const modalTransition = useTransition(isModalOpen, {
+      from: { opacity: 0, transform: 'scale(0.8)' },
+      enter: { opacity: 1, transform: 'scale(1)' },
+      leave: { opacity: 0, transform: 'scale(0.8)' },
+      config: { tension: 180, friction: 30 },
+    });
 
   return (
     <>
@@ -57,30 +71,32 @@ export default function Navbar() {
           </div>
         </button>
 
-       {/* Mobile Menu */}
-        {isOpen && (
-          <div
-            className={`
-              absolute top-0 left-16 z-40 w-38 bg-white/90 bg-opacity-70 p-6
-              flex flex-col items-start gap-6 text-purple-900 text-lg text-left rounded-lg
-              transform transition-transform duration-300 ease-in-out
-              ${isOpen ? 'translate-x-0' : '-translate-x-full'}
-            `}
-          >
-            <button className="hover:underline block" onClick={() => scrollToSection("about")}>About</button>
-            <button className="hover:underline block" onClick={() => scrollToSection("experience")}>Experience</button>
-            <button className="hover:underline block" onClick={() => scrollToSection("stack")}>Skills</button>
-            <button className="hover:underline block" onClick={() => scrollToSection("projects")}>Projects</button>
-            <a 
-              href="/Caitlin_Ma_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline block text-center"
-              onClick={() => setIsOpen(false)}
+         {/* Mobile Menu */}
+         {menuTransition((styles, open) =>
+          open ? (
+            <animated.div
+              style={styles}
+              className="
+                absolute top-0 left-16 z-40 w-40 bg-white/90 p-6
+                flex flex-col items-start gap-6 text-purple-900 text-lg text-left rounded-lg
+                shadow-md
+              "
             >
-              Resume
-            </a>
-          </div>
+              <button className="hover:underline block" onClick={() => scrollToSection("about")}>About</button>
+              <button className="hover:underline block" onClick={() => scrollToSection("experience")}>Experience</button>
+              <button className="hover:underline block" onClick={() => scrollToSection("stack")}>Skills</button>
+              <button className="hover:underline block" onClick={() => scrollToSection("projects")}>Projects</button>
+              <a
+                href="/Caitlin_Ma_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline block text-center"
+                onClick={() => setIsOpen(false)}
+              >
+                Resume
+              </a>
+            </animated.div>
+          ) : null
         )}
       </div>
 
@@ -114,7 +130,20 @@ export default function Navbar() {
       </div>
 
       {/* Contact Modal */}
+      {modalTransition((styles, item) =>
+  item ? (
+    <animated.div style={{
+      ...styles,
+      position: 'fixed',
+      top: '50%',
+      left: '50%',
+      transform: `${styles.transform} translate(-50%, -50%)`,
+      zIndex: 100
+    }}>
       <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </animated.div>
+  ) : null
+)}
     </>
   );
 }

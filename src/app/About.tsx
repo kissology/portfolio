@@ -29,7 +29,7 @@ export default function About({ aboutRef, aboutVisible }: AboutProps) {
         </h2>
 
         <p className="text-lg leading-relaxed px-4 max-w-2xl mx-auto text-center">
-  I like to build scalable web applications and robust APIs, specializing in
+  I love building scalable web applications and robust APIs, specializing in
   modern JavaScript frameworks, and end-to-end feature development, delivering
   impactful solutions that solve real-world problems.
 </p>
