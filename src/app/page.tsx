@@ -1,5 +1,5 @@
 'use client';
-
+import { useState, useEffect } from "react";
 import VantaBackground from "./VantaBackground";
 import useInView from "./hooks/useInView";
 import Navbar from "./Navbar"; 
@@ -16,10 +16,20 @@ export default function Home() {
   const [stackRef, stackVisible] = useInView();
   const [experienceRef, experienceVisible] = useInView();
   const [projectsRef, projectsVisible] = useInView();
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 100); 
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
-    <div>
+     <div
+      className={`transition-opacity duration-1000 ease-out ${
+        isVisible ? 'opacity-100' : 'opacity-0'
+      }`}
+    >
       <VantaBackground />
       <Navbar />
       <div className="relative min-h-screen overflow-hidden">

@@ -19,6 +19,15 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isOpen]);
   
+   // Scroll to section by id and close menu
+   const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setIsOpen(false);
+    }
+  };
+
 
   return (
     <>
@@ -58,10 +67,10 @@ export default function Navbar() {
               ${isOpen ? 'translate-x-0' : '-translate-x-full'}
             `}
           >
-            <button className="hover:underline block" onClick={() => handleScroll("about")}>About</button>
-            <button className="hover:underline block" onClick={() => handleScroll("experience")}>Experience</button>
-            <button className="hover:underline block" onClick={() => handleScroll("stack")}>Skills</button>
-            <button className="hover:underline block" onClick={() => handleScroll("projects")}>Projects</button>
+            <button className="hover:underline block" onClick={() => scrollToSection("about")}>About</button>
+            <button className="hover:underline block" onClick={() => scrollToSection("experience")}>Experience</button>
+            <button className="hover:underline block" onClick={() => scrollToSection("stack")}>Skills</button>
+            <button className="hover:underline block" onClick={() => scrollToSection("projects")}>Projects</button>
             <a 
               href="/Caitlin_Ma_Resume.pdf"
               target="_blank"
