@@ -1,4 +1,5 @@
 import { RefObject, useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 
@@ -11,7 +12,7 @@ const projects = [
   {
     id: 1,
     title: "Sprout",
-    image: "/sprout.png",
+    image: "/sprout_2.png",
     description:
       "A plant care tracking app that helps users monitor watering schedules, sunlight needs, and growth progress—all in one simple dashboard.",
     link: "https://github.com/kissology/Sprout_frontend",
@@ -52,9 +53,11 @@ export default function Projects({ projectsRef, projectsVisible }: ProjectsProps
       onClick={() => setSelectedProject(project)}
       className="cursor-pointer hover:scale-105 transition-transform duration-300 max-w-[300px] w-full bg-[#1a1a1a] text-white overflow-hidden"
     >
-      <img
+      <Image
         src={project.image}
         alt={project.title}
+        width={400} 
+        height={288}
         className="w-full h-72 object-cover"
       />
       <div className="w-full px-2 py-4">

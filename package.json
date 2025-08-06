@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prepare": "husky",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@react-spring/web": "^10.0.1",
@@ -27,7 +29,10 @@
     "autoprefixer": "^10.4.21",
     "eslint": "^9",
     "eslint-config-next": "15.4.1",
+    "eslint-formatter-friendly": "^7.0.0",
+    "husky": "^9.1.7",
     "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
     "tailwindcss": "^4.1.11",
     "typescript": "^5"
   }

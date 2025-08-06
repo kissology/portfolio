@@ -1,5 +1,6 @@
 'use client';
-
+import Image
+ from "next/image";
 interface ExperienceProps {
   experienceRef: React.RefObject<null>;
   experienceVisible: boolean;
@@ -78,9 +79,11 @@ export default function Experience({ experienceRef, experienceVisible }: Experie
             <h2 className="text-3xl font-bold mb-12">Education</h2>
             <div className="flex flex-row justify-between flex-wrap gap-12">
               <div className="flex items-center gap-6">
-                <img
+                <Image
                   src="/flatironlogo.png"
                   alt="Flatiron School logo"
+                  width={64}
+                  height={64}
                   className="w-16 h-16 object-contain"
                 />
                 <div>
@@ -91,9 +94,11 @@ export default function Experience({ experienceRef, experienceVisible }: Experie
               </div>
 
               <div className="flex items-center gap-6">
-                <img
+                <Image
                   src="/purchase.png"
                   alt="SUNY Purchase logo"
+                  width={64}
+                  height={64}
                   className="w-16 h-16 object-contain"
                 />
                 <div>

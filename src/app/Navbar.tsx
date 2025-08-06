@@ -20,7 +20,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isOpen]);
   
-   // Scroll to section by id and close menu
    const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {

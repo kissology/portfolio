@@ -3,12 +3,20 @@
 import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 
+interface VantaEffect {
+  destroy: () => void;
+}
+
 export default function VantaBackground() {
   const vantaRef = useRef(null);
-  const [vantaEffect, setVantaEffect] = useState<any>(null);
+  const [vantaEffect, setVantaEffect] = useState<VantaEffect | null>(null);
 
   useEffect(() => {
-    let NET: any;
+    let NET: (config: {
+      el: HTMLElement | null;
+      THREE: typeof THREE;
+      [key: string]: unknown;
+    }) => VantaEffect;
 
     const loadVanta = async () => {
       const vantaModule = await import('vanta/dist/vanta.net.min');
