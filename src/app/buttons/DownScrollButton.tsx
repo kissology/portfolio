@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 interface DownScrollButtonProps {
   targetId: string;
@@ -8,14 +8,14 @@ export default function DownScrollButton({ targetId }: DownScrollButtonProps) {
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     const section = document.getElementById(targetId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({ behavior: "smooth" });
     }
 
     const btn = e.currentTarget as HTMLElement;
     btn.blur();
-    btn.classList.add('no-hover');
+    btn.classList.add("no-hover");
     setTimeout(() => {
-      btn.classList.remove('no-hover');
+      btn.classList.remove("no-hover");
     }, 300);
   };
 

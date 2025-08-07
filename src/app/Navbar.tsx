@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import { useTransition, animated } from "@react-spring/web";
 import { SiGithub, SiLinkedin, SiGmail } from "react-icons/si";
 import ContactModal from "./modals/ContactModal";
@@ -15,15 +15,15 @@ export default function Navbar() {
         setIsOpen(false);
       }
     };
-  
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isOpen]);
-  
-   const scrollToSection = (id: string) => {
+
+  const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
       setIsOpen(false);
     }
   };
@@ -36,11 +36,11 @@ export default function Navbar() {
   });
 
   const modalTransition = useTransition(isModalOpen, {
-      from: { opacity: 0, transform: 'scale(0.8)' },
-      enter: { opacity: 1, transform: 'scale(1)' },
-      leave: { opacity: 0, transform: 'scale(0.8)' },
-      config: { tension: 180, friction: 30 },
-    });
+    from: { opacity: 0, transform: "scale(0.8)" },
+    enter: { opacity: 1, transform: "scale(1)" },
+    leave: { opacity: 0, transform: "scale(0.8)" },
+    config: { tension: 180, friction: 30 },
+  });
 
   return (
     <>
@@ -70,8 +70,8 @@ export default function Navbar() {
           </div>
         </button>
 
-         {/* Mobile Menu */}
-         {menuTransition((styles, open) =>
+        {/* Mobile Menu */}
+        {menuTransition((styles, open) =>
           open ? (
             <animated.div
               style={styles}
@@ -81,10 +81,30 @@ export default function Navbar() {
                 shadow-md
               "
             >
-              <button className="hover:underline block" onClick={() => scrollToSection("about")}>About</button>
-              <button className="hover:underline block" onClick={() => scrollToSection("experience")}>Experience</button>
-              <button className="hover:underline block" onClick={() => scrollToSection("stack")}>Skills</button>
-              <button className="hover:underline block" onClick={() => scrollToSection("projects")}>Projects</button>
+              <button
+                className="hover:underline block"
+                onClick={() => scrollToSection("about")}
+              >
+                About
+              </button>
+              <button
+                className="hover:underline block"
+                onClick={() => scrollToSection("experience")}
+              >
+                Experience
+              </button>
+              <button
+                className="hover:underline block"
+                onClick={() => scrollToSection("stack")}
+              >
+                Skills
+              </button>
+              <button
+                className="hover:underline block"
+                onClick={() => scrollToSection("projects")}
+              >
+                Projects
+              </button>
               <a
                 href="/Caitlin_Ma_Resume.pdf"
                 target="_blank"
@@ -95,13 +115,17 @@ export default function Navbar() {
                 Resume
               </a>
             </animated.div>
-          ) : null
+          ) : null,
         )}
       </div>
 
       {/* Social links (Top Right) */}
       <div className="absolute top-4 right-4 z-50 flex gap-4 bg-transparent">
-        <a href="https://github.com/kissology" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://github.com/kissology"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <button className="Btn">
             <span className="BG github-bg"></span>
             <span className="svgContainer">
@@ -109,7 +133,11 @@ export default function Navbar() {
             </span>
           </button>
         </a>
-        <a href="https://linkedin.com/in/kissology" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://linkedin.com/in/kissology"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <button className="Btn">
             <span className="BG linkedin-bg"></span>
             <span className="svgContainer">
@@ -130,19 +158,24 @@ export default function Navbar() {
 
       {/* Contact Modal */}
       {modalTransition((styles, item) =>
-  item ? (
-    <animated.div style={{
-      ...styles,
-      position: 'fixed',
-      top: '50%',
-      left: '50%',
-      transform: `${styles.transform} translate(-50%, -50%)`,
-      zIndex: 100
-    }}>
-      <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-    </animated.div>
-  ) : null
-)}
+        item ? (
+          <animated.div
+            style={{
+              ...styles,
+              position: "fixed",
+              top: "50%",
+              left: "50%",
+              transform: `${styles.transform} translate(-50%, -50%)`,
+              zIndex: 100,
+            }}
+          >
+            <ContactModal
+              isOpen={isModalOpen}
+              onClose={() => setIsModalOpen(false)}
+            />
+          </animated.div>
+        ) : null,
+      )}
     </>
   );
 }

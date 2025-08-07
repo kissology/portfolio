@@ -1,6 +1,5 @@
 "use client";
 
-
 interface ContactModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -25,24 +24,24 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
           Got a question or proposal, or just want to say hello? Go ahead.
         </p>
         <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
-        <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4">
             <div className="flex flex-col">
-          <label className="text-gray-400 text-sm mb-1">Your name</label>
-            <input
-              type="text"
-              placeholder="Enter your name"
-              className="border-b w-full p-2 text-purple-600 focus:outline-none focus:border-purple-600 placeholder-purple-400 text-sm focus:placeholder-transparent"
-              required
-            />
+              <label className="text-gray-400 text-sm mb-1">Your name</label>
+              <input
+                type="text"
+                placeholder="Enter your name"
+                className="border-b w-full p-2 text-purple-600 focus:outline-none focus:border-purple-600 placeholder-purple-400 text-sm focus:placeholder-transparent"
+                required
+              />
             </div>
             <div className="flex flex-col">
-             <label className="text-gray-400 text-sm mb-1">Your email</label>
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              className="border-b w-full p-2 text-purple-600 focus:outline-none focus:border-purple-600 placeholder-purple-400 text-sm focus:placeholder-transparent"
-              required
-            />
+              <label className="text-gray-400 text-sm mb-1">Your email</label>
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                className="border-b w-full p-2 text-purple-600 focus:outline-none focus:border-purple-600 placeholder-purple-400 text-sm focus:placeholder-transparent"
+                required
+              />
             </div>
           </div>
           <label className="text-gray-400 text-sm mb-1">Your message</label>

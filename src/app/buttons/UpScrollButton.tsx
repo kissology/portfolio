@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
 export default function UpScrollButton() {
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
     const btn = e.currentTarget as HTMLElement;
     btn.blur();
-    btn.classList.add('no-hover');
+    btn.classList.add("no-hover");
     setTimeout(() => {
-      btn.classList.remove('no-hover');
+      btn.classList.remove("no-hover");
     }, 300);
   };
 

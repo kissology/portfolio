@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 
@@ -9,7 +9,10 @@ interface AboutProps {
 
 export default function About({ aboutRef, aboutVisible }: AboutProps) {
   return (
-    <section id="about" className="snap-start min-h-screen flex items-center justify-center px-4 text-center bg-transparent">
+    <section
+      id="about"
+      className="snap-start min-h-screen flex items-center justify-center px-4 text-center bg-transparent"
+    >
       <div className="max-w-4xl flex flex-col items-center space-y-8">
         <Image
           src="/headshot.jpeg"
@@ -29,10 +32,11 @@ export default function About({ aboutRef, aboutVisible }: AboutProps) {
         </h2>
 
         <p className="text-lg leading-relaxed px-4 max-w-2xl mx-auto text-center">
-  I love building scalable web applications and robust APIs, specializing in
-  modern JavaScript frameworks, and end-to-end feature development, delivering
-  impactful solutions that solve real-world problems.
-</p>
+          I love building scalable web applications and robust APIs,
+          specializing in modern JavaScript frameworks, and end-to-end feature
+          development, delivering impactful solutions that solve real-world
+          problems.
+        </p>
       </div>
     </section>
   );

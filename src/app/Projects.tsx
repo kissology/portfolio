@@ -2,7 +2,6 @@ import { RefObject, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
-
 interface ProjectsProps {
   projectsRef: RefObject<null>;
   projectsVisible: boolean;
@@ -27,8 +26,13 @@ const projects = [
   },
 ];
 
-export default function Projects({ projectsRef, projectsVisible }: ProjectsProps) {
-  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+export default function Projects({
+  projectsRef,
+  projectsVisible,
+}: ProjectsProps) {
+  const [selectedProject, setSelectedProject] = useState<
+    (typeof projects)[0] | null
+  >(null);
 
   return (
     <>
@@ -47,66 +51,67 @@ export default function Projects({ projectsRef, projectsVisible }: ProjectsProps
 
         {/* Grid layout for project cards */}
         <div className="flex flex-wrap justify-center gap-6 max-w-6xl w-full mx-auto px-4">
-  {projects.map((project) => (
-    <div
-      key={project.id}
-      onClick={() => setSelectedProject(project)}
-      className="cursor-pointer hover:scale-105 transition-transform duration-300 max-w-[300px] w-full bg-[#1a1a1a] text-white overflow-hidden"
-    >
-      <Image
-        src={project.image}
-        alt={project.title}
-        width={400} 
-        height={288}
-        className="w-full h-72 object-cover"
-      />
-      <div className="w-full px-2 py-4">
-        <h3 className="text-lg font-bold">{project.title}</h3>
-      </div>
-    </div>
-  ))}
-</div>
-
+          {projects.map((project) => (
+            <div
+              key={project.id}
+              onClick={() => setSelectedProject(project)}
+              className="cursor-pointer hover:scale-105 transition-transform duration-300 max-w-[300px] w-full bg-[#1a1a1a] text-white overflow-hidden"
+            >
+              <Image
+                src={project.image}
+                alt={project.title}
+                width={400}
+                height={288}
+                className="w-full h-72 object-cover"
+              />
+              <div className="w-full px-2 py-4">
+                <h3 className="text-lg font-bold">{project.title}</h3>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Modal */}
       <AnimatePresence>
-  {selectedProject && (
-    <motion.div
-    key={selectedProject.id}
-      className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center px-4"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
-      <motion.div
-        className="bg-white text-black p-6 rounded-lg max-w-md w-full relative"
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.8, opacity: 0 }}
-        transition={{ duration: 0.3 }}
-      >
-        <button
-          onClick={() => setSelectedProject(null)}
-          className="absolute top-2 right-3 text-2xl font-bold"
-          aria-label="Close"
-        >
-          &times;
-        </button>
-        <h2 className="text-2xl font-semibold mb-4">{selectedProject.title}</h2>
-        <p className="mb-4">{selectedProject.description}</p>
-        <a
-          href={selectedProject.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 underline"
-        >
-          View project →
-        </a>
-      </motion.div>
-    </motion.div>
-  )}
-</AnimatePresence>
+        {selectedProject && (
+          <motion.div
+            key={selectedProject.id}
+            className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center px-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="bg-white text-black p-6 rounded-lg max-w-md w-full relative"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-2 right-3 text-2xl font-bold"
+                aria-label="Close"
+              >
+                &times;
+              </button>
+              <h2 className="text-2xl font-semibold mb-4">
+                {selectedProject.title}
+              </h2>
+              <p className="mb-4">{selectedProject.description}</p>
+              <a
+                href={selectedProject.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 underline"
+              >
+                View project →
+              </a>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

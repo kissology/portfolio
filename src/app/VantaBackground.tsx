@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
-import * as THREE from 'three';
+import { useEffect, useRef, useState } from "react";
+import * as THREE from "three";
 
 interface VantaEffect {
   destroy: () => void;
@@ -19,7 +19,7 @@ export default function VantaBackground() {
     }) => VantaEffect;
 
     const loadVanta = async () => {
-      const vantaModule = await import('vanta/dist/vanta.net.min');
+      const vantaModule = await import("vanta/dist/vanta.net.min");
       NET = vantaModule.default;
 
       if (!vantaEffect) {
@@ -33,8 +33,8 @@ export default function VantaBackground() {
           minWidth: 200.0,
           scale: 1.0,
           scaleMobile: 1.0,
-          color: 0xcf587d,            
-          backgroundColor: 0x1b0a2a,  
+          color: 0xcf587d,
+          backgroundColor: 0x1b0a2a,
           points: 10.0,
           maxDistance: 25.0,
           spacing: 18.0,
@@ -47,19 +47,19 @@ export default function VantaBackground() {
     loadVanta();
 
     return () => {
-        vantaEffect?.destroy?.();
-      };
-    }, [vantaEffect]);
-  
-    return (
-      <div
-        ref={vantaRef}
-        className="absolute top-0 left-0 w-full h-[200vh] -z-10"
-        style={{
-          maskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)',
-          WebkitMaskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)',
-        }}
-      />
-    );
-  }
-  
+      vantaEffect?.destroy?.();
+    };
+  }, [vantaEffect]);
+
+  return (
+    <div
+      ref={vantaRef}
+      className="absolute top-0 left-0 w-full h-[200vh] -z-10"
+      style={{
+        maskImage: "linear-gradient(to bottom, black 75%, transparent 100%)",
+        WebkitMaskImage:
+          "linear-gradient(to bottom, black 75%, transparent 100%)",
+      }}
+    />
+  );
+}

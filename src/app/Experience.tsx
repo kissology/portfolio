@@ -1,12 +1,14 @@
-'use client';
-import Image
- from "next/image";
+"use client";
+import Image from "next/image";
 interface ExperienceProps {
   experienceRef: React.RefObject<null>;
   experienceVisible: boolean;
 }
 
-export default function Experience({ experienceRef, experienceVisible }: ExperienceProps) {
+export default function Experience({
+  experienceRef,
+  experienceVisible,
+}: ExperienceProps) {
   return (
     <section
       id="experience"
@@ -17,7 +19,7 @@ export default function Experience({ experienceRef, experienceVisible }: Experie
           <h2
             ref={experienceRef}
             className={`text-center text-5xl mb-15 underline-on-scroll ${
-              experienceVisible ? 'animate' : ''
+              experienceVisible ? "animate" : ""
             }`}
           >
             {`Professional Experience`}
@@ -25,51 +27,82 @@ export default function Experience({ experienceRef, experienceVisible }: Experie
 
           <div className="w-full max-w-5xl space-y-12 text-left">
             <div>
-              <h3 className="text-2xl font-semibold">Software Engineer - Patra Co.</h3>
-              <p className="mt-2 text-sm italic text-white/70 font-bold">Mar. 2023 – Present</p>
+              <h3 className="text-2xl font-semibold">
+                Software Engineer - Patra Co.
+              </h3>
+              <p className="mt-2 text-sm italic text-white/70 font-bold">
+                Mar. 2023 – Present
+              </p>
               <ul className="list-disc list-inside mt-3 space-y-2 text-base text-lg">
                 <li>
-                  Founding developer on Patra’s first SaaS product, building both the frontend and backend
-                  systems for a sophisticated policy comparison application in the insurance and financial
+                  Founding developer on Patra’s first SaaS product, building
+                  both the frontend and backend systems for a sophisticated
+                  policy comparison application in the insurance and financial
                   services sector...
                 </li>
                 <li>
-                  Led the development of an Agency Management system feature. Responsibilities included:
+                  Led the development of an Agency Management system feature.
+                  Responsibilities included:
                   <ul className="list-disc list-inside ml-8 space-y-2">
-                    <li>Designing and implementing a robust database schema and NestJS API...</li>
-                    <li>Writing database migrations to manage permission structures.</li>
-                    <li>Building a multi-step UI flow for onboarding and access control.</li>
-                    <li>Centralizing endpoint logic for consistency.</li>
-                    <li>Contributing to increased sales via streamlined onboarding.</li>
-                  </ul>
-                </li>
-                <li>
-                  Drove a major service expansion, enabling support for complex parent-child data structures.
-                  <ul className="list-disc list-inside ml-8 space-y-2">
-                    <li>Built reusable components and validation for nested inputs.</li>
                     <li>
-                      Increased client adoption and business value through scalable workflows.
+                      Designing and implementing a robust database schema and
+                      NestJS API...
+                    </li>
+                    <li>
+                      Writing database migrations to manage permission
+                      structures.
+                    </li>
+                    <li>
+                      Building a multi-step UI flow for onboarding and access
+                      control.
+                    </li>
+                    <li>Centralizing endpoint logic for consistency.</li>
+                    <li>
+                      Contributing to increased sales via streamlined
+                      onboarding.
                     </li>
                   </ul>
                 </li>
                 <li>
-                  Championed best practices through strong architecture, testing, and peer reviews.
+                  Drove a major service expansion, enabling support for complex
+                  parent-child data structures.
+                  <ul className="list-disc list-inside ml-8 space-y-2">
+                    <li>
+                      Built reusable components and validation for nested
+                      inputs.
+                    </li>
+                    <li>
+                      Increased client adoption and business value through
+                      scalable workflows.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  Championed best practices through strong architecture,
+                  testing, and peer reviews.
                 </li>
               </ul>
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold">Web Developer - Freelance</h3>
-              <p className="mt-2 text-sm italic text-white/70 font-bold">Feb. 2021 – Mar. 2023</p>
+              <h3 className="text-2xl font-semibold">
+                Web Developer - Freelance
+              </h3>
+              <p className="mt-2 text-sm italic text-white/70 font-bold">
+                Feb. 2021 – Mar. 2023
+              </p>
               <ul className="list-disc list-inside mt-3 space-y-2 text-base text-lg">
                 <li>
-                  Improved SEO and performance by optimizing loading strategies and using next-gen formats.
+                  Improved SEO and performance by optimizing loading strategies
+                  and using next-gen formats.
                 </li>
                 <li>
-                  Integrated AWS Cognito for secure user auth flows and JWT-based role control.
+                  Integrated AWS Cognito for secure user auth flows and
+                  JWT-based role control.
                 </li>
                 <li>
-                  Delivered responsive, accessible designs using Tailwind, Bootstrap, and semantic HTML.
+                  Delivered responsive, accessible designs using Tailwind,
+                  Bootstrap, and semantic HTML.
                 </li>
               </ul>
             </div>
@@ -88,8 +121,12 @@ export default function Experience({ experienceRef, experienceVisible }: Experie
                 />
                 <div>
                   <h3 className="text-xl font-bold">Flatiron School</h3>
-                  <p className="text-lg text-gray-100">Software Engineering, BC</p>
-                  <p className="text-sm text-gray-400">Fullstack Web Development Program</p>
+                  <p className="text-lg text-gray-100">
+                    Software Engineering, BC
+                  </p>
+                  <p className="text-sm text-gray-400">
+                    Fullstack Web Development Program
+                  </p>
                 </div>
               </div>
 
