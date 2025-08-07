@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description: "Full-stack software engineer",
   icons: {
     icon: "/logo.png",
-  }
+  },
 };
 
 export default function RootLayout({
