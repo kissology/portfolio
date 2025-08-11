@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Caitlin Ma",
   description: "Full-stack software engineer",
   icons: {
-    icon: "/favicon-new.ico?v=1",
+    icon: "/favicon.ico",
   },
 };
 
