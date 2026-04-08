@@ -9,6 +9,12 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  console.log(isOpen);
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       if (isOpen) {
@@ -106,47 +112,49 @@ export default function Navbar() {
                 Projects
               </button>
               <a
-                href="/Caitlin_Ma_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/caitlin%20ma.pdf"
+                download="Caitlin_Ma.pdf"
                 className="hover:underline block text-center"
                 onClick={() => setIsOpen(false)}
               >
                 Resume
               </a>
             </animated.div>
-          ) : null,
+          ) : null
         )}
       </div>
 
       {/* Social links (Top Right) */}
       <div className="absolute top-4 right-4 z-50 flex gap-4 bg-transparent">
-        <a
-          href="https://github.com/kissology"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <button className="Btn">
-            <span className="BG github-bg"></span>
-            <span className="svgContainer">
-              <SiGithub className="text-white w-5 h-5" />
-            </span>
-          </button>
-        </a>
-        <a
-          href="https://linkedin.com/in/kissology"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <button className="Btn">
-            <span className="BG linkedin-bg"></span>
-            <span className="svgContainer">
-              <SiLinkedin className="text-white w-5 h-5" />
-            </span>
-          </button>
-        </a>
         <button
-          onClick={() => setIsModalOpen(true)}
+          onClick={() => {
+            setIsOpen(false);
+            window.open("https://github.com/kissology", "_blank");
+          }}
+          className="Btn"
+        >
+          <span className="BG github-bg"></span>
+          <span className="svgContainer">
+            <SiGithub className="text-white w-5 h-5" />
+          </span>
+        </button>
+        <button
+          onClick={() => {
+            setIsOpen(false);
+            window.open("https://www.linkedin.com/in/caitlindma/", "_blank");
+          }}
+          className="Btn"
+        >
+          <span className="BG linkedin-bg"></span>
+          <span className="svgContainer">
+            <SiLinkedin className="text-white w-5 h-5" />
+          </span>
+        </button>
+        <button
+          onClick={() => {
+            setIsModalOpen(true);
+            setIsOpen(false);
+          }}
           className="Btn inline-flex items-center justify-center"
         >
           <span className="BG gmail-bg"></span>
@@ -174,7 +182,7 @@ export default function Navbar() {
               onClose={() => setIsModalOpen(false)}
             />
           </animated.div>
-        ) : null,
+        ) : null
       )}
     </>
   );

@@ -28,81 +28,105 @@ export default function Experience({
           <div className="w-full max-w-5xl space-y-12 text-left">
             <div>
               <h3 className="text-2xl font-semibold">
-                Software Engineer - Patra Co.
+                Software Engineer - The Knot Worldwide, New York, NY
               </h3>
               <p className="mt-2 text-sm italic text-white/70 font-bold">
-                Mar. 2023 – Present
+                October 2025 - Present
               </p>
-              <ul className="list-disc list-inside mt-3 space-y-2 text-base text-lg">
+              <ul className="list-disc list-inside mt-3 space-y-2 text-lg">
                 <li>
-                  Founding developer on Patra’s first SaaS product, building
-                  both the frontend and backend systems for a sophisticated
-                  policy comparison application in the insurance and financial
-                  services sector...
+                  Designed and built full-stack services using Typescript, NestJS,
+                  Prisma, PostgreSQL, React/Next.js, Docker, AWS, and Terraform
+                  for The Knot Worldwide’s vendor marketplace, helping modernize
+                  functionality within a legacy application ecosystem that supports
+                  nearly 950,000 businesses globally.
                 </li>
                 <li>
-                  Led the development of an Agency Management system feature.
-                  Responsibilities included:
-                  <ul className="list-disc list-inside ml-8 space-y-2">
-                    <li>
-                      Designing and implementing a robust database schema and
-                      NestJS API...
-                    </li>
-                    <li>
-                      Writing database migrations to manage permission
-                      structures.
-                    </li>
-                    <li>
-                      Building a multi-step UI flow for onboarding and access
-                      control.
-                    </li>
-                    <li>Centralizing endpoint logic for consistency.</li>
-                    <li>
-                      Contributing to increased sales via streamlined
-                      onboarding.
-                    </li>
-                  </ul>
+                  Serve as a go-to engineer for NestJS and Prisma, helping define
+                  backend implementation patterns and resolve complex technical
+                  issues across the team.
                 </li>
                 <li>
-                  Drove a major service expansion, enabling support for complex
-                  parent-child data structures.
-                  <ul className="list-disc list-inside ml-8 space-y-2">
-                    <li>
-                      Built reusable components and validation for nested
-                      inputs.
-                    </li>
-                    <li>
-                      Increased client adoption and business value through
-                      scalable workflows.
-                    </li>
-                  </ul>
+                  Delivered a high-priority spam mitigation solution by rapidly
+                  standing up a new NestJS application foundation and core service
+                  architecture, leveraging my deep NestJS expertise to take the
+                  service from concept to production-ready launch within one week.
                 </li>
                 <li>
-                  Championed best practices through strong architecture,
-                  testing, and peer reviews.
+                  Led CI/CD migration automation with GitHub Actions and AWS for a
+                  vendor scheduling and availability platform, serving as the
+                  team’s go-to engineer for migrations and deployment workflows.
+                  Developed backend logic for syncing calendar and event data
+                  leveraging Databus and Cronofy, writing SQL queries to validate
+                  data integrity during a legacy-to-new database migration, catching
+                  discrepancies and ensuring accurate provisioning across systems.
+                </li>
+                <li>
+                  Identified and solved critical infrastructure and environment
+                  bugs that threatened delivery across multiple services,
+                  developing a workable path forward that unblocked active
+                  development. Persistently drove the solution through cross-team
+                  dependencies and organizational friction, and the approach was
+                  adopted across the vendor zone as the interim standard while a
+                  permanent fix was being built.
+                </li>
+                <li>
+                  Partner closely with stakeholders and adjacent engineering teams
+                  to turn ambiguous business requirements into enterprise-grade
+                  systems that improve reliability, streamline delivery, and
+                  support broader business outcomes.
                 </li>
               </ul>
             </div>
-
             <div>
               <h3 className="text-2xl font-semibold">
-                Web Developer - Freelance
+                Software Engineer - Patra, El Dorado Hills, CA
               </h3>
               <p className="mt-2 text-sm italic text-white/70 font-bold">
-                Feb. 2021 – Mar. 2023
+                March 2022 - August 2025
               </p>
-              <ul className="list-disc list-inside mt-3 space-y-2 text-base text-lg">
+              <ul className="list-disc list-inside mt-3 space-y-2 text-lg">
                 <li>
-                  Improved SEO and performance by optimizing loading strategies
-                  and using next-gen formats.
+                  Founding engineer on Patra’s first B2B SaaS product, building a
+                  Next.js/React frontend and NestJS backend for an AI-powered
+                  policy comparison platform in the insurance and financial
+                  services space.
                 </li>
                 <li>
-                  Integrated AWS Cognito for secure user auth flows and
-                  JWT-based role control.
+                  Owned key frontend initiatives that improved self-service
+                  onboarding and expanded the platform’s ability to support complex
+                  insurance workflows, including building a multi-step Next.js
+                  onboarding flow for agency creation, user assignment,
+                  impersonation, and role-based access control. This feature
+                  reduced onboarding time by 40%, increased sales velocity by 25%,
+                  and supported 10+ new clients in the first quarter.
                 </li>
                 <li>
-                  Delivered responsive, accessible designs using Tailwind,
-                  Bootstrap, and semantic HTML.
+                  Developed reusable nested-field UI components for complex
+                  hierarchical policy data input, including field-level validation,
+                  dynamic form states, full CRUD functionality, and side-by-side
+                  policy comparison workflows for AI-extracted insurance data,
+                  delivering a strategic product expansion in close partnership
+                  with stakeholders.
+                </li>
+                <li>
+                  Redesigned the platform’s data model and API structure to
+                  support complex parent-child relationships, enabling the
+                  application to capture and render and persist previously
+                  unsupported data models. This feature enabled more advanced
+                  client workflows, contributing to a 25% increase in enterprise
+                  client adoption and a projected $1M in pipeline value
+                </li>
+                <li>
+                  Championed maintainable engineering practices through reusable
+                  component design, test driven development, scalable frontend
+                  patterns, clean architecture, and strong collaboration across
+                  product and engineering teams.
+                </li>
+                <li>
+                  Regularly presented feature work in demos, technical walkthroughs,
+                  and stakeholder sessions, clearly communicating UI decisions,
+                  technical tradeoffs, and implementation details.
                 </li>
               </ul>
             </div>
@@ -122,10 +146,10 @@ export default function Experience({
                 <div>
                   <h3 className="text-xl font-bold">Flatiron School</h3>
                   <p className="text-lg text-gray-100">
-                    Software Engineering, BC
+                    Certificate of Completion, Software Engineering
                   </p>
                   <p className="text-sm text-gray-400">
-                    Fullstack Web Development Program
+                    Oct 2021 - Feb 2022
                   </p>
                 </div>
               </div>
@@ -140,8 +164,7 @@ export default function Experience({
                 />
                 <div>
                   <h3 className="text-xl font-bold">SUNY Purchase</h3>
-                  <p className="text-lg text-gray-100">Acting, BFA</p>
-                  <p className="text-sm text-gray-400">Minor: Mathematics</p>
+                  <p className="text-lg text-gray-100">B.F.A</p>
                 </div>
               </div>
             </div>

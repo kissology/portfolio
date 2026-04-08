@@ -9,6 +9,7 @@ import {
   SiRuby,
   SiRubyonrails,
   SiPython,
+  SiPhp,
   SiJest,
   SiPostgresql,
   SiTypeorm,
@@ -18,7 +19,16 @@ import {
   SiFigma,
   SiRedis,
   SiDocker,
+  SiKubernetes,
   SiGithub,
+  SiJquery,
+  SiRedux,
+  SiBootstrap,
+  SiTailwindcss,
+  SiPrisma,
+  SiAmazonwebservices,
+  SiSymfony,
+  SiLaravel,
 } from "react-icons/si";
 import { TechItem } from "./TechItem";
 
@@ -55,31 +65,56 @@ export default function Skills({ stackRef, stackVisible }: SkillProps) {
             />
             <TechItem name="NestJS" icon={<SiNestjs className="text-5xl" />} />
             <TechItem
+              name="AWS"
+              icon={<SiAmazonwebservices className="text-5xl" />}
+            />
+            <TechItem name="Prisma" icon={<SiPrisma className="text-5xl" />} />
+            <TechItem
+              name="TypeORM"
+              icon={<SiTypeorm className="text-5xl" />}
+            />
+            <TechItem
               name="Node.js"
               icon={<SiNodedotjs className="text-5xl" />}
             />
+            <TechItem name="Jest" icon={<SiJest className="text-5xl" />} />
+            <TechItem name="Docker" icon={<SiDocker className="text-5xl" />} />
+            <TechItem name="Kubernetes" icon={<SiKubernetes className="text-5xl" />} />
             <TechItem name="Ruby" icon={<SiRuby className="text-5xl" />} />
             <TechItem
               name="Rails"
               icon={<SiRubyonrails className="text-5xl" />}
             />
             <TechItem name="Python" icon={<SiPython className="text-5xl" />} />
-            <TechItem name="Jest" icon={<SiJest className="text-5xl" />} />
+            <TechItem name="PHP" icon={<SiPhp className="text-5xl" />} />
             <TechItem
               name="PostgreSQL"
               icon={<SiPostgresql className="text-5xl" />}
-            />
-            <TechItem
-              name="TypeORM"
-              icon={<SiTypeorm className="text-5xl" />}
             />
             <TechItem name="HTML" icon={<SiHtml5 className="text-5xl" />} />
             <TechItem name="CSS" icon={<SiCss3 className="text-5xl" />} />
             <TechItem name="Jira" icon={<SiJira className="text-5xl" />} />
             <TechItem name="Figma" icon={<SiFigma className="text-5xl" />} />
             <TechItem name="Redis" icon={<SiRedis className="text-5xl" />} />
-            <TechItem name="Docker" icon={<SiDocker className="text-5xl" />} />
             <TechItem name="Github" icon={<SiGithub className="text-5xl" />} />
+            <TechItem name="jQuery" icon={<SiJquery className="text-5xl" />} />
+            <TechItem name="Redux" icon={<SiRedux className="text-5xl" />} />
+            <TechItem
+              name="Bootstrap"
+              icon={<SiBootstrap className="text-5xl" />}
+            />
+            <TechItem
+              name="Tailwind CSS"
+              icon={<SiTailwindcss className="text-5xl" />}
+            />
+            <TechItem
+              name="Symfony"
+              icon={<SiSymfony className="text-5xl" />}
+            />
+            <TechItem
+              name="Laravel"
+              icon={<SiLaravel className="text-5xl" />}
+            />
           </div>
         </div>
       </div>
